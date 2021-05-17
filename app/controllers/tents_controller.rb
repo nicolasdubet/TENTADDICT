@@ -6,7 +6,7 @@ class TentsController < ApplicationController
     @tent = Tent.find(params[:id])
     end
     def new
-    @tent = Tent.new   
+    @tent = Tent.new
     end
     def create
         @tent = Tent.new(tent_params)
