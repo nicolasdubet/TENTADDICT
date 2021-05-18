@@ -1,0 +1,6 @@
+<h1><strong>Create a new booking</strong></h1>
+
+<%= simple_form_for [ @tent, @booking ] do |b| %>
+  <%= b.input :date_book %>
+  <%= b.submit "Book this tent", class: "btn btn-primary" %>
+<% end %>

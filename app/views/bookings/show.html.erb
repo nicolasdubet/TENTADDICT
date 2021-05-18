@@ -1,0 +1,12 @@
+<h1>My booking</h1>
+
+<%= link_to bookings_path do %>
+  <button class="btn btn-principal btn-margin-top">All my bookings</button>
+<% end %>
+
+<%= @tent.name %>
+<%= @tent.number_of_couch %>
+<%= @tent.season %>
+<%= @tent.weight %>
+<%= @booking.date_book %>
+

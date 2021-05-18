@@ -1,0 +1,10 @@
+<h1><strong>My bookings<strong></h1>
+
+<% @bookings.each do |booking| %>
+<h2>My tent</h2>
+  <%= booking.tent_id %>
+<h2>My user ID</h2>
+  <%= booking.user_id %>
+<h2>Booking Date</h2>
+  <%= booking.date_book %>
+<% end %>
