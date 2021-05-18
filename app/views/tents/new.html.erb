@@ -1,18 +1,17 @@
-<h1> Create new tent</h1>
+<h1 class="text-center"> Create new tent</h1>
 
-
-
-  <%= form_for Tent.new do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :number_of_couch %>
-  <%= f.text_field :number_of_couch %> 
-  <%= f.label :season %>
-  <%= f.text_field :season %>
-  <%= f.label :weight %>
-  <%= f.text_field :weight %>
-  <%= f.submit %>
+<div class="container">
+<%= form_for Tent.new do |f| %>
+ <div class="row mb-3 justify-content-center"><%= f.label :name %>
+   <%= f.text_field :name %></div>
+   <div class="row mb-3 justify-content-center"><%= f.label :number_of_couch %>
+  <%= f.text_field :number_of_couch %></div>
+   <div class="row mb-3 justify-content-center"><%= f.label :season %>
+  <%= f.text_field :season %></div>
+   <div class="row mb-3 justify-content-center"><%= f.label :weight %>
+  <%= f.text_field :weight %></div>
+  <div class="row mb-3 justify-content-center"> <%= f.submit %>
+  </div>
 <% end %>
+</div>
 
-  
- 
