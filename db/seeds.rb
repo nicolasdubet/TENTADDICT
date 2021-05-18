@@ -1,4 +1,5 @@
 require 'faker'
+Tent.destroy_all
 
 puts 'Creating fake tents...'
 25.times do
