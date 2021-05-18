@@ -1,3 +1,4 @@
+
 <h1> All tent </h1>
 
 <ul>
@@ -5,3 +6,13 @@
 <li><%= link_to tent.name, tent_path(tent)%>
 <% end %>
 </ul>
+
+<%# search form %>
+<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-campground"></i></i>  Search
+    </button>
+  </div>
+</form>
