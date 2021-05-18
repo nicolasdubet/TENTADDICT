@@ -1,7 +1,35 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts 'Creating fake tents...'
+25.times do
+  tent = Tent.new(
+    name:    Faker::Sports::Football.team,
+    number_of_couch: rand(1..10),
+    season: "spring/summer",
+    weight:  rand(1..7),
+  )
+  tent.save!
+end
+
+25.times do
+    tent = Tent.new(
+      name:    Faker::Sports::Football.team,
+      number_of_couch: rand(1..10),
+      season: "fall/winter",
+      weight:  rand(1..7),
+    )
+    tent.save!
+end
+
+25.times do
+    tent = Tent.new(
+      name:    Faker::Sports::Football.team,
+      number_of_couch: rand(1..10),
+      season: "4seasons",
+      weight:  rand(1..7),
+    )
+    tent.save!
+end
+
+
+puts 'Finished!'

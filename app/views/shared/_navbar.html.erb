@@ -19,7 +19,7 @@
         <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://www.leparisien.fr/resizer/GmbxnNPcwYwc6G9jknQJRIRn1yU=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/ENZHPWPGDGP4OJCXDY6Y433RV4.jpg" />
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <%= link_to "Déconnexion", destroy_user_session_path, method: :delete%>
         </div>
       </li>
     </ul>
