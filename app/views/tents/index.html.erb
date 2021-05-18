@@ -1,1 +1,7 @@
-<p>coucou</p>
+<h1> All tent </h1>
+
+<ul>
+<% @tents.each do |tent| %>
+<li><%= link_to tent.name, tent_path(tent)%>
+<% end %>
+</ul>
