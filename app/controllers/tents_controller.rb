@@ -10,18 +10,18 @@ class TentsController < ApplicationController
   end
 
   def new
-    @tent = Tent.new
+  @tent = Tent.new
   end
 
   def create
-    # authorize @tent
     @tent = Tent.new(tent_params)
     if @tent.save
-      redirect_to tent_path(@tent)
+        redirect_to tent_path(@tent)
     else
-      render :new
+        render :new
     end
   end
+
 
   private
 
