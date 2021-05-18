@@ -1,4 +1,11 @@
-<%# navbar %>
+
+<h1> All tent </h1>
+
+<ul>
+<% @tents.each do |tent| %>
+<li><%= link_to tent.name, tent_path(tent)%>
+<% end %>
+</ul>
 
 <%# search form %>
 <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
