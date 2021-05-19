@@ -1,4 +1,4 @@
-<div class="pages-container margin-nav col-6 offset-5">
+<div class="margin-nav">
   <h3>My reservations</h3>
   <div class="cards-grid-3">
     <% if @bookings.empty? %>
@@ -10,7 +10,12 @@
       <% @bookings.each do |booking| %>
         <div class="card-tent">
           <%= link_to booking_path(booking.id) do %>
-            <h5><%= cl_image_tag booking.tent.photo.key %></h5>
+            <% if booking.tent.photo.attached? %>
+              <div><%= cl_image_tag booking.tent.photo.key , style: "width: 400px"%></div>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?
+              ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80", style:"width: 400px" %>
+            <% end %>
             <div class="card-tent-content">
               <div class="card-tent-date">
                 <p>Booking Date: <%= booking.date_book %></p>
