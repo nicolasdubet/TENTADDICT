@@ -1,0 +1,36 @@
+.cardtentindexlist {
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    border-radius: 1px;
+    margin: 15px 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 25px;
+    color: white;
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  
+
+.cardsflex {
+    grid-template-columns: 1fr 1fr;
+}
+
+.cardsindex {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+a {
+    color:#BEB628;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none; 
+}

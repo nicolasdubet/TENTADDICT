@@ -1,18 +1,22 @@
-
-<h1> All tent </h1>
-
-<div class="card">
-<div class="container">
-<ul>
-<% @tents.each do |tent| %>
-<div class= "row">
-<img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dGVudHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=60 ">
-</div>
-<li><%= link_to tent.name, tent_path(tent)%>
-<% end %>
-</ul>
+<div class="homepagedisplay" style="background-image:  linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/1043/5184/3456.jpg?hmac=wsz2e0aFKEI0ij7mauIr2nFz2pzC8xNlgDHWHYi9qbc)">
+  <strong><div>Become</div><strong>
+  <div> 
+    <span>a Tent'Addict</span>
   </div>
 </div>
+
+<h2> Discover the tents that fit your needs</h2>
+<div class="cardsindex">
+  <% @tents.each_with_index do |tent, index| %>
+  <div class="cardsflex">
+    <div class="cardtentindexlist" style="background-image:  linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/200x200?sig=<%=index + 1%>)" >
+      <%= link_to tent.name, tent_path(tent)%>  
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
 
 <%# search form %>
 <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
