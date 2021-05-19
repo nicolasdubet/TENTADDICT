@@ -1,7 +1,16 @@
-<h1><%= @tent.name %></h1>
+<div class="container d-flex justify-content-center">
+    <div class="card-main">
+        <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dGVudHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=60 ">
+        <div class="card-tent">
+        <div>
+            
+        <h2><%= @tent.name %></h2>
+        <P><strong>place: <%= @tent.number_of_couch %></strong></P>
+        <P><strong>season: <%= @tent.season %></strong></P>
+        <P><strong>weight: <%= @tent.weight %></strong></P>
+        </div>
+        <%= link_to "Book now", new_tent_booking_path(@tent), class: "btn btn-primary" %>
+        </div>
+    </div>
+</div>
 
-<ul>
-<li><%= @tent.number_of_couch %></li>
-<li><%= @tent.season %></li>
-<li><%= @tent.weight %></li>
-</ul>
