@@ -10,7 +10,7 @@ class TentsController < ApplicationController
   end
 
   def new
-  @tent = Tent.new
+    @tent = Tent.new
   end
 
   def create
@@ -26,6 +26,6 @@ class TentsController < ApplicationController
   private
 
   def tent_params
-    params.require(:tent).permit(:name, :number_of_couch, :season, :weight)
+    params.require(:tent).permit(:name, :number_of_couch, :season, :weight, :photo)
   end
 end

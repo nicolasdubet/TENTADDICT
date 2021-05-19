@@ -1,0 +1,54 @@
+h3, h5{
+  color: #666666;
+}
+
+h5 {
+  margin-bottom: 0;
+}
+
+.margin-nav {
+  margin-top: 30px !important;
+}
+
+.pages-container {
+  width:  95%;
+  margin: 0 auto;
+}
+
+.pages-container h3{
+  text-align: center;
+}
+
+.btn-margin-top {
+  margin-top: 0 !important;
+}
+
+.cards-grid-3 {
+  display:               grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-tent {
+  background-color: white;
+  box-shadow:       1px 1px 3px rgba(0,0,0,0.2);
+  padding:          10px;
+  margin:           20px;
+  border-radius:    5px;
+  color:            #666666;
+}
+
+.card-tent:hover {
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+}
+
+.card-tent-date {
+  padding: 20px;
+}
+
+.card-tent-content {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding-top:     20px;
+  line-height:     15px;
+}

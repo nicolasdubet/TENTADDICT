@@ -1,10 +1,29 @@
-<h1><strong>My bookings<strong></h1>
-
-<% @bookings.each do |booking| %>
-<h2>My tent</h2>
-  <%= booking.tent_id %>
-<h2>My user ID</h2>
-  <%= booking.user_id %>
-<h2>Booking Date</h2>
-  <%= booking.date_book %>
-<% end %>
+<div class="pages-container margin-nav col-6 offset-5">
+  <h3>My reservations</h3>
+  <div class="cards-grid-3">
+    <% if @bookings.empty? %>
+      <p>There is no reservation yet...</p>
+      <%= link_to tents_path do %>
+        <button class="btn btn-success">Find a tent</button>
+      <% end %>
+    <% else %>
+      <% @bookings.each do |booking| %>
+        <div class="card-tent">
+          <%= link_to booking_path(booking.id) do %>
+            <h5><%= cl_image_tag booking.tent.photo.key %></h5>
+            <div class="card-tent-content">
+              <div class="card-tent-date">
+                <p>Booking Date: <%= booking.date_book %></p>
+              </div>
+              <div>
+                <%= link_to tent_path(booking.tent.id) do %>
+                  <button class="btn btn-success btn-margin-top">More details</button>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
