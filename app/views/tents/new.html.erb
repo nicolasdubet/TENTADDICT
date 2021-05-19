@@ -1,7 +1,7 @@
 <h1 class="text-center"> Create new tent</h1>
 
 <div class="container">
-<%= form_for Tent.new do |f| %>
+<%= simple_form_for @tent do |f| %>
  <div class="row mb-3 justify-content-center"><%= f.label :name %>
    <%= f.text_field :name %></div>
    <div class="row mb-3 justify-content-center"><%= f.label :number_of_couch %>
@@ -10,6 +10,7 @@
   <%= f.text_field :season %></div>
    <div class="row mb-3 justify-content-center"><%= f.label :weight %>
   <%= f.text_field :weight %></div>
+  <%= f.input :photo, as: :file %>
   <div class="row mb-3 justify-content-center"> <%= f.submit %>
   </div>
 <% end %>
