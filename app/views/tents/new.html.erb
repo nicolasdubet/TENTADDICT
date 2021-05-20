@@ -1,18 +1,13 @@
-<h1 class="text-center"> Create new tent</h1>
-
 <div class="container">
-<%= simple_form_for @tent do |f| %>
- <div class="row mb-3 justify-content-center"><%= f.label :name %>
-   <%= f.text_field :name %></div>
-   <div class="row mb-3 justify-content-center"><%= f.label :number_of_couch %>
-  <%= f.text_field :number_of_couch %></div>
-   <div class="row mb-3 justify-content-center"><%= f.label :season %>
-  <%= f.text_field :season %></div>
-   <div class="row mb-3 justify-content-center"><%= f.label :weight %>
-  <%= f.text_field :weight %></div>
-  <%= f.input :photo, as: :file %>
-  <div class="row mb-3 justify-content-center"> <%= f.submit %>
+  <div class="tentform">
+    <h1>Create a new tent</h1>
+    <%= simple_form_for(@tent) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :number_of_couch, collection: 1..10 %>
+      <%= f.input :season, collection: ["spring/summer", "fall/winter", "4seasons"] %>
+      <%= f.input :weight, collection: 1..7 %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit class: "btn btn-light btn-lg btn-block"%>
   </div>
-<% end %>
+    <% end %>
 </div>
-
