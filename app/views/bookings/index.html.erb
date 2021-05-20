@@ -22,6 +22,14 @@
                 <p>Booking Dates: from <%= booking.start_date_book %> to <%= booking.end_date_book %></p>
               </div>
               <div style="text-align: right;">
+                Booking Status:
+                <% if booking.status == "y" || booking.status == "Y" %>
+                  Accepted
+                <% elsif booking.status == "N" || booking.status == "n" %>
+                  Declined
+                <% else %>
+                  Pending
+                <% end %>
                 <%= link_to tent_path(booking.tent.id) do %>
                   <button class="btn btn-success btn-margin-top">More details</button>
                 <% end %>
