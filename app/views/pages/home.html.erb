@@ -1,5 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="homepagedisplay" style="background-image:  linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/1043/5184/3456.jpg?hmac=wsz2e0aFKEI0ij7mauIr2nFz2pzC8xNlgDHWHYi9qbc)">
+  <strong><div>Become</div><strong>
+  <div> 
+    <span>a Tent'Addict</span>
+  </div>
+  <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <button name="button" type="submit" class="btn btn-flat">
+  <i class="fas fa-search"></i> Search
+</div>
 
 <%# navbar %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
@@ -9,6 +18,14 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="search-form-control form-group">
+    
+   
+      
+   
+  </div>
+</form>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -31,11 +48,3 @@
 </div>
 
 <%# search form %>
-<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Search
-    </button>
-  </div>
-</form>
