@@ -93,7 +93,7 @@ puts 'Creating first fake tents...'
   )
   tent.photo.attach(io: file, filename: '8nes.png', content_type: 'image/png')
   tent.save!
-  
+
 
 
 
@@ -107,7 +107,7 @@ puts 'Creating first fake tents...'
   )
   tent.photo.attach(io: file, filename: '9nes.png', content_type: 'image/png')
   tent.save!
-    
+
 
 
 
@@ -121,7 +121,7 @@ puts 'Creating first fake tents...'
   )
   tent.photo.attach(io: file, filename: '10nes.png', content_type: 'image/png')
   tent.save!
-      
+
 
 
 
