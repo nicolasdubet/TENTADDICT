@@ -1,66 +1,68 @@
-.card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 100px;
-    size: 100px
-  }
-  
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  /* Add some padding inside the card container */
-  .card-main {
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    margin-top: 60px;
-    width: 500px;
-    padding: 10px;
+.container-booking {
+  background-color: white;
+  padding: 0px 50px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-left: 250px;
+  margin-top: 45px;
+}
 
-  }
-  
-  .card-main > img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 50px;
-    
-  }
-  
-  .card-main h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .card-main p {
-    font-size: 12px;
-    opacity: .7;
-    margin: 0;
-  }
-  
-  
-  .card-main .card-tent {
-    padding: 16px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
-  }
-  .btn-flat {
-    color: white;
-    padding: 8px 24px;
-    border-radius: 4px;
-    background: #1EDD88;
-    transition: background 0.3s ease;
-  }
-  
-  .btn-flat:hover {
-    background: #1BCB7F;
-    color: white;
-  }
-  
-  
+.container-booking label {
+  color: white;
+}
+
+.list-booking {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.list-booking p {
+  margin-bottom: 20px;
+}
+
+.list-booking img {
+  padding-bottom: 20px;
+  width: 30px;
+}
+.list-booking p {
+  margin: 0px;
+}
+
+.list-booking-item-season {
+  flex: 0 0 33%;
+  padding-right: 10px;
+  padding-top: 20px;
+}
+
+.list-booking-item-capacity {
+  flex: 0 0 33%;
+  border-right: 1px solid #F4F4F4;
+  padding-right: 10px;
+  padding-top: 20px;
+}
+
+.list-booking-item-weight{
+  flex: 0 0 33%;
+  border-left: 1px solid #F4F4F4;
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+.col-xs-12.col-md-4.col-sm-3{
+  margin-bottom: 10px;
+}
+
+.show-h1 {
+  width: fit-content;
+  display: flex;
+  margin: auto;
+}
+
+.btnbook {
+  display: flex;
+  justify-content: flex-end;
+  margin: 25px 0px
+}

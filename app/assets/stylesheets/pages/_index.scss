@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "newtent";
 
 .homepagedisplay h1, {
     font-family: 'Varela Round', sans-serif;
@@ -28,7 +29,7 @@ h2 {
     margin-bottom: 20px;
     margin-top: 20px;
     text-align: center;
-    color: #BEB628;
+    //color: #BEB628;
 }
 
 h4 {
@@ -67,9 +68,9 @@ h4 {
   white-space:nowrap;
 }
 
-.homepagedisplay div:first-of-type {    /* For increasing performance 
-                       ID/Class should've been used. 
-                       For a small demo 
+.homepagedisplay div:first-of-type {    /* For increasing performance
+                       ID/Class should've been used.
+                       For a small demo
                        it's okaish for now */
   animation: showup 7s infinite;
 }
