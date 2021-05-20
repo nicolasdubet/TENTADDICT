@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'tents#index'
+  root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
     resources :bookings, only: [:index, :show]
     resources :tents, except: [:edit, :update, :destroy] do
       resources :bookings, only: [:new, :create]
+      end
     end
-    resources :users, only: [:new, :create]
-    get "home", to: "pages#home" 
+    resources :users, only: [:new, :create] 
     resources :bookings, only: [:destroy]
 end
 

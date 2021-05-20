@@ -30,6 +30,8 @@ class BookingsController < ApplicationController
       redirect_to bookings_path
     end
 
+    
+
     private
 
     def set_booking
