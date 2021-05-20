@@ -7,6 +7,8 @@ class TentsController < ApplicationController
 
   def show
     @tent = Tent.find(params[:id])
+    @booking = Booking.new
+    @tents = Tent.all
   end
 
   def new
