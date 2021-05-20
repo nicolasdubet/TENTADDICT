@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show]
+  before_action :set_booking, only: [:show, :destroy]
   before_action :set_tent, only: [:new, :create]
 
     def index
@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     end
 
     def show
-      @tent = booking.tent  
+      @tent = booking.tent
     end
 
     def new
@@ -25,6 +25,11 @@ class BookingsController < ApplicationController
       end
     end
 
+    def destroy
+      @booking.destroy
+      redirect_to bookings_path
+    end
+
     private
 
     def set_booking
@@ -32,7 +37,7 @@ class BookingsController < ApplicationController
     end
 
     def booking_params
-        params.require(:booking).permit(:date_book)
+        params.require(:booking).permit(:start_date_book, :end_date_book)
     end
 
     def set_tent

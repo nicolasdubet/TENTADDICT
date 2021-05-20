@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     end
     resources :users, only: [:new, :create]
     get "home", to: "pages#home" 
+    resources :bookings, only: [:destroy]
 end
 
