@@ -13,7 +13,7 @@
     font-weight: bolder;
     text-shadow: 0 0 10px rgba(0,0,0,0.2);
   }
-  
+
 
 .cardsflex {
     grid-template-columns: 1fr 1fr;
@@ -27,10 +27,10 @@
 
 
 a {
-    color:#BEB628;
+    // color: white;
 }
 
 a:hover {
     color: white;
-    text-decoration: none; 
+    text-decoration: none;
 }

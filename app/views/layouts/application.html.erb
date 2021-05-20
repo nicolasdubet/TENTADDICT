@@ -18,9 +18,15 @@
    <%= render 'shared/navbar' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="container min-container">
-      <%= yield %>
-    </div>
+    <% if controller.controller_name == "tents" && controller.action_name == "show"%>
+      <div class="">
+        <%= yield %>
+      </div>
+    <% else %>
+      <div class="container min-container">
+        <%= yield %>
+      </div>
+    <% end %>
     <%= render 'shared/footer' %>
   </body>
 </html>
