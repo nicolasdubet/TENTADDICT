@@ -1,20 +1,20 @@
-<div class="margin-nav">
+<div class="pages-container margin-nav">
   <h3>My reservations</h3>
   <div class="cards-grid-3">
     <% if @bookings.empty? %>
       <p>There is no reservation yet...</p>
       <%= link_to tents_path do %>
-        <button class="btn btn-success">Find a tent</button>
+        <button class="btn btn-success btn-margin-top">Find a tent</button>
       <% end %>
     <% else %>
       <% @bookings.each do |booking| %>
         <div class="card-tent">
           <%= link_to booking_path(booking.id) do %>
             <% if booking.tent.photo.attached? %>
-              <div><%= cl_image_tag booking.tent.photo.key , style: "width: 400px"%></div>
+              <div><%= cl_image_tag booking.tent.photo.key , height: 300, width: 400, crop: :fill%></div>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?
-              ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80", style:"width: 400px" %>
+              ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80", height: 300, width: 400, crop: :fill %>
             <% end %>
             <div class="card-tent-content">
               <div class="card-tent-date">
@@ -23,6 +23,11 @@
               <div>
                 <%= link_to tent_path(booking.tent.id) do %>
                   <button class="btn btn-success btn-margin-top">More details</button>
+                <% end %>
+                <%= link_to booking_path(booking),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                  <button class="btn" style="border-color: red; color: red; background-color: none ">Cancel</button>
                 <% end %>
               </div>
             </div>
