@@ -18,7 +18,7 @@
             <% end %>
             <div class="card-tent-content">
               <div class="card-tent-date">
-                <p>Booking Date: <%= booking.date_book %></p>
+                <p>Booking Dates: from <%= booking.start_date_book %> to <%= booking.end_date_book %></p>
               </div>
               <div>
                 <%= link_to tent_path(booking.tent.id) do %>
@@ -32,3 +32,5 @@
     <% end %>
   </div>
 </div>
+
+
