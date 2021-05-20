@@ -1,9 +1,16 @@
+p{
+  color: #666666;
+}
 h3, h5{
   color: #666666;
 }
 
 h5 {
   margin-bottom: 0;
+}
+
+img {
+  width:100%;
 }
 
 .margin-nav {
@@ -19,8 +26,8 @@ h5 {
   text-align: center;
 }
 
-.btn-margin-top {
-  margin-top: 0 !important;
+.btn {
+  margin-top: 10px;
 }
 
 .cards-grid-3 {
@@ -53,3 +60,4 @@ h5 {
   line-height:     15px;
 
 }
+

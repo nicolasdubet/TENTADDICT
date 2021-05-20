@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_booking, only: [:show]
   before_action :set_tent, only: [:new, :create]
 
     def index
@@ -23,11 +23,6 @@ class BookingsController < ApplicationController
       else
         render :new
       end
-    end
-
-    def destroy
-      @booking.destroy
-      redirect_to bookings_path
     end
 
     private
