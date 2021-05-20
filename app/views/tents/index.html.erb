@@ -9,7 +9,7 @@
 <div class="cardsindex">
   <% @tents.each_with_index do |tent, index| %>
   <div class="cardsflex">
-    <div class="cardtentindexlist" style="background-image:  linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/200x200?sig=<%=index + 1%>)" >
+  <div class="cardtentindexlist" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path tent.photo.key %>')">
       <%= link_to tent.name, tent_path(tent)%>  
     </div>
   </div>
