@@ -2,7 +2,11 @@ class TentsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @tents = Tent.all
+    if params[:query].present?
+      @tents = Tent.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @tents = Tent.all
+    end
   end
 
   def show
@@ -22,6 +26,7 @@ class TentsController < ApplicationController
     else
         render :new
     end
+
   end
 
 
