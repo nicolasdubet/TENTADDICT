@@ -21,7 +21,7 @@ class TentsController < ApplicationController
 
   def create
     @tent = Tent.new(tent_params)
-    @tent.user = current_user
+    @tent.user_id = current_user.id
     if @tent.save
         redirect_to tent_path(@tent)
     else
