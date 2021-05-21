@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :pseudo, presence: true, uniqueness: true
   validates :gender, presence: true, inclusion:  { in: %w(male female other),
   message: "%{value} is not a gender" }
+  validates :status, acceptance: {accept: ['accepted', 'declined', 'waiting']}
   
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
