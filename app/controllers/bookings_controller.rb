@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
       @booking.update(status:'accepted')
       # authorize @booking
       redirect_to bookings_path
-  end
+    end
 
   def declined
       @booking = Booking.find(params[:booking_id])
