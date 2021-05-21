@@ -4,6 +4,5 @@ class UsersController < ApplicationController
 #     params.require(:user).permit(:first_name, :last_name, :pseudo, :weight)
 #   end
 # end
-    
-    end
+end
 

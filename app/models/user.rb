@@ -9,6 +9,10 @@ class User < ApplicationRecord
   validates :gender, presence: true, inclusion:  { in: %w(male female other),
   message: "%{value} is not a gender" }
 
+  validates :status, acceptance: {accept: ['accepted', 'declined', 'waiting']}
+  
+
+
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
 
