@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create]
     resources :bookings, only: [:destroy]
     patch "accept", to: "bookings#accept"
-    puts "decline", to: "bookings#declined"
+    put "decline", to: "bookings#declined"
 end
