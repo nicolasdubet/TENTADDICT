@@ -39,3 +39,14 @@
 .min-container {
   min-height: calc(100vh - 74px - 100px) ;
 }
+
+.dropdown-menu a {
+    color: blue;
+        margin: 3px;
+        border-radius: 25px;
+}
+
+.dropdown-menu a:hover {
+    color: green;
+
+}
