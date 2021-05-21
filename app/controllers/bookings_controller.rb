@@ -4,6 +4,8 @@ class BookingsController < ApplicationController
 
     def index
       @bookings = current_user.bookings
+      @tents = current_user.tents
+      @my_demands = Booking.where(tent: @tents)
     end
 
     def show
@@ -26,9 +28,11 @@ class BookingsController < ApplicationController
     end
 
     def destroy
+      @booking=Booking.find(params[:id])
       @booking.destroy
       redirect_to bookings_path
     end
+
 
     def accept
       @booking = Booking.find(params[:booking_id])
@@ -43,6 +47,8 @@ class BookingsController < ApplicationController
       authorize @booking
       redirect_to bookings_path
   end
+
+
 
     private
 
