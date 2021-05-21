@@ -23,7 +23,7 @@ class TentsController < ApplicationController
     @tent = Tent.new(tent_params)
     @tent.user_id = current_user.id
     if @tent.save
-        redirect_to tent_path(@tent)
+        redirect_to bookings_path
     else
         render :new
     end
