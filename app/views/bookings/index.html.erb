@@ -1,96 +1,110 @@
-<div class="pages-container margin-nav">
-  <h3>My bookings</h3>
-  <div class="cards-grid-3">
-    <% if @bookings.empty? %>
-      <p>There is no reservation yet...</p>
-      <%= link_to tents_path do %>
-        <button class="btn btn-success btn-margin-top">Find a tent</button>
-      <% end %>
-    <% else %>
-      <% @bookings.each do |booking| %>
-        <div class="card-tent">
-          <%= link_to booking_path(booking.id) do %>
-            <% if booking.tent.photo.attached? %>
-             <%= cl_image_tag booking.tent.photo.key , height: 300, width: 400, crop: :fill%>
-            <% else %>
-              <%= image_tag "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?
-              ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80", height: 300, width: 400, crop: :fill %>
-            <% end %>
-            <div class="card-tent-content">
-              <div class="card-tent-date">
-               <p><strong> <%= booking.tent.name %></strong> </p>
-                <p>Booking Dates: from <%= booking.start_date_book %> to <%= booking.end_date_book %></p>
-              </div>
-              <div style="text-align: right;">
-                Booking Status:
-                <% if booking.status == "accepted" %>
-                  Accepted
-                <% elsif booking.status == "declined" %>
-                  Declined
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My bookings</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My demands</button>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="pages-container margin-nav">
+      <div class="cards-grid-3">
+        <% if @bookings.empty? %>
+          <p>There is no reservation yet...</p>
+          <%= link_to tents_path do %>
+            <button class="btn btn-success btn-margin-top">Find a tent</button>
+          <% end %>
+        <% else %>
+          <% @bookings.each do |booking| %>
+            <div class="card-tent">
+              <%= link_to booking_path(booking.id) do %>
+                <% if booking.tent.photo.attached? %>
+                <%= cl_image_tag booking.tent.photo.key , height: 300, width: 400, crop: :fill%>
                 <% else %>
-                  Pending
+                  <%= image_tag "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?
+                  ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80", height: 300, width: 400, crop: :fill %>
                 <% end %>
-                <%= link_to tent_path(booking.tent.id) do %>
-                  <button class="btn btn-success btn-margin-top">More details</button>
-                <% end %>
-                <%= link_to booking_path(booking),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } do %>
-                  <button class="btn" style="border-color: red; color: red; background-color: none ">Cancel</button>
-                <% end %>
-              </div>
+                <div class="card-tent-content">
+                  <div class="card-tent-date">
+                  <p><strong> <%= booking.tent.name %></strong> </p>
+                    <p>Booking Dates: from <%= booking.start_date_book %> to <%= booking.end_date_book %></p>
+                  </div>
+                  <div style="text-align: right;">
+                    Booking Status:
+                    <% if booking.status == "accepted" %>
+                      Accepted
+                    <% elsif booking.status == "declined" %>
+                      Declined
+                    <% else %>
+                      Pending
+                    <% end %>
+                    <%= link_to tent_path(booking.tent.id) do %>
+                      <button class="btn btn-success btn-margin-top">More details</button>
+                    <% end %>
+                    <%= link_to booking_path(booking),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } do %>
+                      <button class="btn" style="border-color: red; color: red; background-color: none ">Cancel</button>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
             </div>
           <% end %>
-        </div>
-      <% end %>
-    <% end %>
-
+        <% end %>
+      </div>
+    </div>
   </div>
 
-   <h3>My demands</h3>
-  <div class="cards-grid-3">
-    <% if @my_demands.empty? %>
-      <p>There is no demand for your tents...</p>
-      <%= link_to tents_path do %>
-        <button class="btn btn-success btn-margin-top">Find a tent</button>
-      <% end %>
-    <% else %>
-      <% @my_demands.each do |booking| %>
-        <div class="card-tent">
-          <%= link_to booking_path(booking.id) do %>
-            <% if booking.tent.photo.attached? %>
-             <%= cl_image_tag booking.tent.photo.key , height: 300, width: 400, crop: :fill%>
-            <% else %>
-              <%= image_tag "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?
-              ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80", height: 300, width: 400, crop: :fill %>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="cards-grid-3 mt-3">
+      <% if @my_demands.empty? %>
+        <p>There is no demand for your tents...</p>
+      <% else %>
+        <% @my_demands.each do |booking| %>
+          <div class="card-tent">
+            <%= link_to booking_path(booking.id) do %>
+              <% if booking.tent.photo.attached? %>
+              <%= cl_image_tag booking.tent.photo.key , height: 300, width: 400, crop: :fill%>
+              <% else %>
+                <%= image_tag "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?
+                ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80", height: 300, width: 400, crop: :fill %>
+              <% end %>
+              <div class="card-tent-content">
+                <div class="card-tent-date">
+                <p><strong> <%= booking.tent.name %></strong> </p>
+                  <p>Booking Dates: from <%= booking.start_date_book %> to <%= booking.end_date_book %></p>
+                </div>
+                <div style="text-align: right;">
+                  Booking Status:
+                  <% if booking.status == "accepted" %>
+                    Accepted
+                  <% elsif booking.status == "declined" %>
+                    Declined
+                  <% else %>
+                    Pending
+                  <% end %>
+                  <% if booking.status != "accepted" && booking.status != "declined" %>
+                    <%= link_to accept_path(booking_id: booking.id), method: :patch  do%>
+                      <button class="btn btn-success btn-margin-top">Accept</button>
+                    <% end %>
+
+                    <%= link_to decline_path(booking_id: booking.id),
+                      method: :put,
+                      data: { confirm: "Are you sure?" } do %>
+                      <button class="btn" style="border-color: red; color: red; background-color: none ">Decline</button>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
             <% end %>
-            <div class="card-tent-content">
-              <div class="card-tent-date">
-               <p><strong> <%= booking.tent.name %></strong> </p>
-                <p>Booking Dates: from <%= booking.start_date_book %> to <%= booking.end_date_book %></p>
-              </div>
-              <div style="text-align: right;">
-
-                <% if booking.status == "accepted" %>
-                  <p>Accepted</p>
-                <% elsif booking.status == "declined" %>
-                  Declined
-                <% end %>
-                <% if booking.status != "accepted" && booking.status != "declined" %>
-                  <%= link_to accept_path(booking_id: booking.id), method: :patch  do%>
-                    <button class="btn btn-success btn-margin-top">Accept</button>
-                  <% end %>
-
-                  <%= link_to decline_path(booking_id: booking.id),
-                    method: :put,
-                    data: { confirm: "Are you sure?" } do %>
-                    <button class="btn" style="border-color: red; color: red; background-color: none ">Decline</button>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+  </div>
 </div>
+
+
