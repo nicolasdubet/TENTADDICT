@@ -34,7 +34,7 @@
             } do |f| %>
             <div>
               <div style="display: flex">
-                <%= f.input :start_date_book, input_html: {class: "control-label hidden"} %>
+              <p>from :</p>  <%= f.input :start_date_book, input_html: {class: "control-label hidden"} %> <p>to :</p>
                 <%= f.input :end_date_book, input_html: {class: "control-label hidden"} %>
               </div>
               <div class="btnbook" style="display: flex; justify-content: flex-end; margin: 25px 0px"><%= f.submit 'Book', class: "btn btn-success" %></div>
