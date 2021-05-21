@@ -4,7 +4,9 @@ Tent.destroy_all
 puts "destroy all t"
 
 
-
+user1 = User.create(first_name: "Louis", last_name: "Dupont", email: "louis.dupont@gmail.com", password: "password", pseudo: "louis", gender: "male")
+user2 = User.create(first_name: "Nicolas", last_name: "Dupont", email: "nicolas.dupont@gmail.com", password: "password", pseudo: "nicolas", gender: "male")
+user3 = User.create(first_name: "Chris", last_name: "Dupont", email: "chris.dupont@gmail.com", password: "password", pseudo: "chris", gender: "male")
 
 
 puts 'Creating first fake tents...'
@@ -13,7 +15,8 @@ puts 'Creating first fake tents...'
     name:    "Tent'Attion",
     number_of_couch: rand(1..9),
     season: "spring/summer",
-    weight:  rand(1..6)
+    weight:  rand(1..6),
+    user_id: user1.id
   )
   tent.photo.attach(io: file, filename: '1nes.png', content_type: 'image/png')
   tent.save!
@@ -26,7 +29,8 @@ puts 'Creating first fake tents...'
     name:    "Tent'inn",
     number_of_couch: rand(1..9),
     season: "fall/winter",
-    weight:  rand(1..6)
+    weight:  rand(1..6),
+    user_id: user1.id
   )
   tent.photo.attach(io: file, filename: '2nes.png', content_type: 'image/png')
   tent.save!
@@ -38,7 +42,8 @@ puts 'Creating first fake tents...'
     name:    "Tent'emon",
     number_of_couch: rand(1..9),
     season: "4seasons",
-    weight:  rand(1..6)
+    weight:  rand(1..6),
+    user_id: user2.id
   )
   tent.photo.attach(io: file, filename: '4nes.png', content_type: 'image/png')
   tent.save!
@@ -50,7 +55,8 @@ puts 'Creating first fake tents...'
     name:    "Tent'ure",
     number_of_couch: rand(1..9),
     season: "spring/summer",
-    weight:  rand(1..6)
+    weight:  rand(1..6),
+    user_id: user2.id
   )
   tent.photo.attach(io: file, filename: '5nes.png', content_type: 'image/png')
   tent.save!
@@ -62,7 +68,8 @@ puts 'Creating first fake tents...'
     name:    "Tent'adédé",
     number_of_couch: rand(1..9),
     season: "4seasons",
-    weight:  rand(1..6)
+    weight:  rand(1..6),
+    user_id: user2.id
   )
   tent.photo.attach(io: file, filename: '6nes.png', content_type: 'image/png')
   tent.save!
@@ -75,7 +82,8 @@ puts 'Creating first fake tents...'
     name:    "Tent'oDD",
     number_of_couch: rand(1..9),
     season: "fall/winter",
-    weight:  rand(1..6)
+    weight:  rand(1..6),
+    user_id: user3.id
   )
   tent.photo.attach(io: file, filename: '7nes.png', content_type: 'image/png')
   tent.save!
@@ -89,7 +97,8 @@ puts 'Creating first fake tents...'
     name:    "Tent'aculaire",
     number_of_couch: rand(1..9),
     season: "spring/summer",
-    weight:  rand(1..6)
+    weight:  rand(1..6),
+    user_id: user3.id
   )
   tent.photo.attach(io: file, filename: '8nes.png', content_type: 'image/png')
   tent.save!
@@ -103,7 +112,8 @@ puts 'Creating first fake tents...'
     name:    "Tent'fastlife",
     number_of_couch: rand(1..9),
     season: "4seasons",
-    weight:  rand(1..6)
+    weight:  rand(1..6),
+    user_id: user3.id
   )
   tent.photo.attach(io: file, filename: '9nes.png', content_type: 'image/png')
   tent.save!
@@ -117,7 +127,8 @@ puts 'Creating first fake tents...'
     name:    "Tent'ochaud",
     number_of_couch: rand(1..9),
     season: "fall/winter",
-    weight:  rand(1..6)
+    weight:  rand(1..6),
+    user_id: user3.id
   )
   tent.photo.attach(io: file, filename: '10nes.png', content_type: 'image/png')
   tent.save!
@@ -131,7 +142,8 @@ puts 'Creating first fake tents...'
     name:    "Tent'forAll",
     number_of_couch: rand(1..9),
     season: "4seasons",
-    weight:  rand(1..6)
+    weight:  rand(1..6),
+    user_id: user2.id
   )
   tent.photo.attach(io: file, filename: '11nes.png', content_type: 'image/png')
   tent.save!
