@@ -70,13 +70,11 @@
                 <p>Booking Dates: from <%= booking.start_date_book %> to <%= booking.end_date_book %></p>
               </div>
               <div style="text-align: right;">
-                Booking Status:
+
                 <% if booking.status == "accepted" %>
-                  Accepted
+                  <p>Accepted</p>
                 <% elsif booking.status == "declined" %>
                   Declined
-                <% else %>
-                  Pending
                 <% end %>
                 <% if booking.status != "accepted" && booking.status != "declined" %>
                   <%= link_to accept_path(booking_id: booking.id), method: :patch  do%>
