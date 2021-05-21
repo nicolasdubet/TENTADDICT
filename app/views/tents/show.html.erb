@@ -34,8 +34,8 @@
             } do |f| %>
             <div>
               <div style="display: flex">
-                <%= f.input :start_date_book, as: :string,  input_html: {class: "datepicker item-booking mb-2 mr-sm-2"}, placeholder: 'Start day' %>
-                <%= f.input :end_date_book, as: :string,  input_html: {class: "datepicker item-booking mb-2 mr-sm-2"}, placeholder: 'End day' %>
+                <%= f.input :start_date_book, input_html: {class: "control-label hidden"} %>
+                <%= f.input :end_date_book, input_html: {class: "control-label hidden"} %>
               </div>
               <div class="btnbook" style="display: flex; justify-content: flex-end; margin: 25px 0px"><%= f.submit 'Book', class: "btn btn-success" %></div>
             </div>
@@ -48,22 +48,15 @@
 <div class="wrapper-white">
   <div class="container">
     <h2 class="text-center">Choose another tent:</h2>
-    <div class="row">
-      <% @tents.each do |tent| %>
-        <% if tent != @tent %>
-        <div class="col-xs-12 col-md-4 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-            url('<%= cl_image_path tent.photo.key, height: 300, width: 400, crop: :fill %>')">
-            <div class="card-category"><%= tent.season %></div>
-            <div class="card-description">
-              <h2><%= tent.name %></h2>
-              <p><%= tent.weight %></p>
-            </div>
-            <%= link_to '', tent_path(tent), class: "card-link" %>
-          </div>
-        </div>
-        <% end %>
-      <% end %>
+      <div class="cardsindex">
+    <% @tents.each_with_index do |tent, index| %>
+    <div class="cardsflex">
+    <div class="cardtentindexlist" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path tent.photo.key %>')">
+        <%= link_to tent.name, tent_path(tent)%>
+      </div>
     </div>
+    <% end %>
+  </div>
   </div>
 </div>
+
