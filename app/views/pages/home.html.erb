@@ -1,7 +1,7 @@
 <div class="container">
 <div class="homepagedisplay" style="background-image:  linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/1043/5184/3456.jpg?hmac=wsz2e0aFKEI0ij7mauIr2nFz2pzC8xNlgDHWHYi9qbc)">
   <strong style="min-width: 355px;"><div>Become</div><strong>
-  <div>   
+  <div>
     <span>a Tent'Addict</span>
   </div>
   <%= form_tag tents_path, method: :get do %>
@@ -10,25 +10,25 @@
     class: "form-control string required",
     placeholder: "Find a tent"
   %>
-  <%= submit_tag "Search", class: "btn btn-flat" %>
+  <%= submit_tag "Search", class: "btn btn-success" %>
 <% end %>
- 
+
 </div>
 <%# navbar %>
 
-   
-      
-   
-  
 
-  
+
+
+
+
+
 <%# search form %>
 <h3 style="margin-top: revert;"> Top tent of the month </h3>
 <div class="cardsindex">
   <% @tents.first(3).each do |tent| %>
     <div class="cardsflex">
   <div class="cardtentindexlist" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path tent.photo.key %>')">
-      <%= link_to tent.name, tent_path(tent)%>  
+      <%= link_to tent.name, tent_path(tent)%>
     </div>
   </div>
   <% end %>
